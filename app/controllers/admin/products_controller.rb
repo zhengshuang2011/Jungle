@@ -3,7 +3,6 @@ class Admin::ProductsController < ApplicationController
 
 
   def index
-    raise username.inspect
     @products = Product.order(id: :desc).all
   end
 
