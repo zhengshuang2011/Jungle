@@ -25,6 +25,22 @@
             <% end %>
           </ul>
         </li>
+        <li>
+        <%= link_to aboutus_path do %>
+           About Us
+        <% end %>
+      </li>    
+      <% if current_user %>
+      <li>
+      <a> Hi <%= current_user.first_name %> </a>
+      </li>
+      <li>
+      <%= link_to "Logout", '/logout' %>
+      </li>
+    <% else %>
+       <li><%= link_to 'Login', '/login' %></li>
+       <li><%= link_to 'Register', '/signup' %></li>
+       <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
        <li class="dropdown">
@@ -44,11 +60,7 @@
             <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
           <% end %>
         </li>
-        <li>
-        <%= link_to aboutus_path do %>
-          <%= fa_icon "comment" %> About Us
-        <% end %>
-      </li>
+
       </ul>
     </div>
   </div>
